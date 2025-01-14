@@ -39,7 +39,8 @@ class Coordinates2Country:
         code = self.country_code(latitude, longitude)
         if code:
             try:
-                return locale.Locale(language).display_name(code)
+                loc = locale.normalize(f"{language}_US.UTF-8")
+                return locale.getlocale(loc)[1][code]
             except KeyError:
                 return None
         return None
