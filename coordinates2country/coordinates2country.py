@@ -1,10 +1,8 @@
+import locale
+from typing import Optional, Dict
 from PIL import Image
 import pkg_resources
 import csv
-import locale
-from typing import Optional, Dict
-import io
-
 
 class Coordinates2Country:
     def __init__(self):
@@ -41,7 +39,7 @@ class Coordinates2Country:
         code = self.country_code(latitude, longitude)
         if code:
             try:
-                return locale.getlocale(language)[1][code]
+                return locale.Locale(language).display_name(code)
             except KeyError:
                 return None
         return None
@@ -62,8 +60,10 @@ class Coordinates2Country:
     def country_qid(self, latitude: float, longitude: float) -> Optional[str]:
         """Get Wikidata QID for given coordinates."""
         code = self.country_code(latitude, longitude)
-        if code and code in self.countries_map:
-            return self.countries_map[code]['qid']
+        if code:
+          for grayshade, data in self.countries_map.items():
+            if data['code'] == code:
+               return data['qid']
         return None
 
     def _nearest_country(self, x: int, y: int) -> Optional[str]:
