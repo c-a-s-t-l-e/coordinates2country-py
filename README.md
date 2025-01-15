@@ -17,7 +17,7 @@ pip install coordinates2country-py
 ## Usage
 
 ```python
-from coordinates2country import Coordinates2Country
+from coordinates2country.coordinates2country import Coordinates2Country
 
 c2c = Coordinates2Country()
 
