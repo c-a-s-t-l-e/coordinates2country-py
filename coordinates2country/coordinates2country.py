@@ -23,10 +23,10 @@ class Coordinates2Country:
         bitmap_path = pkg_resources.resource_filename('coordinates2country', 'resources/countries-8bitgray.png')
         try:
             bitmap = Image.open(bitmap_path)
-            print(f"Bitmap loaded: {bitmap_path}")
+            # print(f"Bitmap loaded: {bitmap_path}")
             return bitmap
         except Exception as e:
-            print(f"Failed to load bitmap: {e}")
+            # print(f"Failed to load bitmap: {e}")
             return None
 
     def _load_countries_csv(self):
@@ -45,9 +45,9 @@ class Coordinates2Country:
                         'code': country_code,
                         'qid': qid
                     }
-            print(f"Loaded {len(countries)} countries from {csv_path}.")
+            # print(f"Loaded {len(countries)} countries from {csv_path}.")
         except Exception as e:
-            print(f"Failed to load countries CSV: {e}")
+            # print(f"Failed to load countries CSV: {e}")
         return countries
 
     def country(self, latitude: float, longitude: float, language: str = 'en') -> str:
@@ -83,10 +83,10 @@ class Coordinates2Country:
 
         try:
             grayscale_value = self.bitmap.getpixel((x, y))
-            print(f"Pixel ({x}, {y}) has grayscale value: {grayscale_value}")
+            # print(f"Pixel ({x}, {y}) has grayscale value: {grayscale_value}")
             return grayscale_value
         except IndexError:
-            print(f"Pixel ({x}, {y}) is out of bounds!")
+            # print(f"Pixel ({x}, {y}) is out of bounds!")
             return None
 
     def get_country_name(self, country_code, language='en'):
@@ -95,5 +95,5 @@ class Coordinates2Country:
             locale = Locale(language)
             return locale.territories.get(country_code.upper(), None)
         except Exception as e:
-            print(f"Failed to get country name for {country_code} in {language}: {e}")
+            # print(f"Failed to get country name for {country_code} in {language}: {e}")
             return None
