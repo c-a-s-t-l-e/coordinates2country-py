@@ -26,7 +26,7 @@ class Coordinates2Country:
             # print(f"Bitmap loaded: {bitmap_path}")
             return bitmap
         except Exception as e:
-            # print(f"Failed to load bitmap: {e}")
+            # print(f"ERROR: Failed to load bitmap: {e}")
             return None
 
     def _load_countries_csv(self):
@@ -47,7 +47,7 @@ class Coordinates2Country:
                     }
             # print(f"Loaded {len(countries)} countries from {csv_path}.")
         except Exception as e:
-            # print(f"Failed to load countries CSV: {e}")
+            print(f"ERROR: Failed to load countries CSV: {e}")
         return countries
 
     def country(self, latitude: float, longitude: float, language: str = 'en') -> str:
