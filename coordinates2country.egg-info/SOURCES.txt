@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+coordinates2country/__init__.py
+coordinates2country/coordinates2country.py
+coordinates2country.egg-info/PKG-INFO
+coordinates2country.egg-info/SOURCES.txt
+coordinates2country.egg-info/dependency_links.txt
+coordinates2country.egg-info/not-zip-safe
+coordinates2country.egg-info/requires.txt
+coordinates2country.egg-info/top_level.txt
+coordinates2country/resources/countries-8bitgray.png
+coordinates2country/resources/countries.csv
+tests/__init__.py
+tests/test_coordinates2country.py

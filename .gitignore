@@ -1,0 +1,8 @@
+# Ignore dist folder
+dist/
+
+# Ignore temporary files
+*~
+
+# Ignore egg-info files
+*.egg-info

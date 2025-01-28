@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="coordinates2country",
-    version="1.0.0",
+    version="1.0.9",
     packages=find_packages(),
     include_package_data=True,
     package_data={
@@ -10,6 +10,7 @@ setup(
     },
     install_requires=[
         'Pillow',  # For image processing
+        'babel'    # For country code names
     ],
     author="Abram Astle",
     author_email="castle676767@gmail.com",
@@ -23,4 +24,10 @@ setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
+    options={
+        'easy_install': {
+            'force_installation': True,  # Force overwrite of existing installation
+        }
+    },
+    zip_safe=False,  # This ensures the package is always extracted
 )
