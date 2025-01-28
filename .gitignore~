@@ -1,5 +1,0 @@
-# Ignore dist folder
-dist/
-
-# Ignore temporary files
-*~
