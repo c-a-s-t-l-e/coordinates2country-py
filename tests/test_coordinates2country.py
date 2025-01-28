@@ -1,5 +1,5 @@
 import unittest
-from coordinates2country import Coordinates2Country
+from coordinates2country.coordinates2country import Coordinates2Country
 
 class TestCoordinates2Country(unittest.TestCase):
     def setUp(self):
