@@ -1,8 +1,11 @@
+# Ignore compiled files
+*.pyc
+
 # Ignore dist folder
 dist/
 
 # Ignore temporary files
-*~
+~*
 
 # Ignore egg-info files
-*.egg-info
+*.egg-info/
